@@ -1,0 +1,608 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    /* cambiamos la etiqueta raiz, y ahora se cuenta de 10px en 10px. */
+}
+
+.resume {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #272727;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    width: 100%;
+    position: relative;
+    background-color: #E8E8E8;
+    max-width: 1000px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 35px 55px black;
+    margin: 6em 0;
+    flex-direction: column;
+}
+
+.cv-header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #2727272e;
+    z-index: 1;
+}
+
+.cv-foto {
+    width: 13.5em;
+    height: 13.5em;
+    border-radius: 50%;
+    margin: 0.5em 0.5em 0.5em 0.5em;
+    border-color: #272727;
+    border-style: solid;
+}
+
+.cv-foto-border {
+    position: relative;
+    width: 14.5em;
+    height: 14.5em;
+    background-color: #272727;
+    border-radius: 50%;
+    margin-top: 1em;
+}
+
+.cv-datosPrincipales {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-bottom: 1em;
+}
+
+.cv-datosPrincipales-nombre {
+    font-family: 'Sofia Sans', sans-serif;
+    font-weight: 800;
+    font-size: 4em;
+    color: rgb(126, 18, 154);
+    text-shadow: 0 0 8px #e8e8e8;;
+}
+
+.cv-datosPrincipales-nombre a:active,
+a:visited,
+a:link {
+    color: rgb(126, 18, 154);
+    text-decoration: none;
+}
+
+.cv-datosPrincipales-titulo {
+    font-family: "Reddit Sans", sans-serif;
+    font-weight: 800;
+    font-size: 3em;
+    color: #272727;
+}
+
+.datosCV-left,
+.datosCV-right {
+    margin: 0 3em 3em 3em;
+}
+
+.datosCV-left section,
+.datosCV-right section {
+    text-align: left;
+    margin-top: 3em;
+}
+
+
+.datosCV-left p {
+    text-align: justify;
+    text-indent: 2pc;
+    justify-self: space-between;
+}
+
+
+.datosCV-left section div ul {
+    display: flex;
+    flex-direction: row;
+    align-items: self-start;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-indent: 2pc;
+}
+.datosCV-left section div ul li i {
+    text-indent: -2pc;
+}
+
+.detalle-contacto {
+    list-style: none;
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.correoElectronico {
+    text-decoration: underline rgb(126, 18, 154);
+}
+
+.updated-date {
+    color: #E8E8E8;
+    text-align: right;
+    text-indent: 0.5em;
+}
+
+.datosCV-left-idiomas .detalle ul {
+    margin: 0 1em;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+.datosCV-left-idiomas .detalle ul li {
+    margin: 0 2em;
+    text-indent: 0;
+}
+
+.datosCV-left-skills .detalle {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.datosCV-left-skills .detalle ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 3em;
+    text-indent: 0;
+}
+
+.subtitulo {
+    color: rgb(126, 18, 154);
+    font-size: 2em;
+    font-weight: bolder;
+    margin-bottom: 1em;
+}
+
+.empleo,
+.instituto {
+    font-style: italic;
+    font-weight: light;
+    margin-bottom: 0.5em;
+    font-size: 1em;
+}
+
+.detalle {
+    color: #272727;
+    font-size: 14px;
+    line-height: 1.4em;
+    text-align: left;
+}
+
+.cloud-topLeft {
+    background-image: url(../Multimedia/esquina.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    transform: rotate(180deg);
+    position: absolute;
+    top: -10em;
+    left: -14em;
+    height: 40em;
+    width: 80em;
+    z-index: 0;
+}
+
+.cloud-bottomRight {
+    background-image: url(../Multimedia/esquina.png);
+    background-repeat: no-repeat;
+    background-size: 104%;
+    position: absolute;
+    bottom: -6em;
+    right: -4em;
+    width: 41em;
+    height: 25em;
+    z-index: -1;
+    visibility: hidden;
+}
+
+.cv-footer {
+    color: #E8E8E8;
+    background-color: #272727;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+}
+
+.dot-little,
+.dot-medium,
+.dot-large {
+    border-radius: 50%;
+    background-color: #af9970cf;
+    z-index: 0;
+    position: absolute;
+    visibility: hidden;
+}
+
+.dot-little {
+    width: 5em;
+    height: 5em;
+    top: 6em;
+    left: 45em;
+    background-color: #af9970cf;
+    z-index: 0;
+    position: absolute;
+}
+
+.dot-medium {
+    width: 8em;
+    height: 8em;
+    top: 15em;
+    right: 2em;
+    background-color: #6d6d6d;
+    z-index: -1;
+    position: absolute;
+}
+
+.dot-large {
+    width: 12em;
+    height: 12em;
+    top: -4em;
+    right: -4em;
+    background-color: #272727;
+    z-index: 0;
+    position: absolute;
+}
+
+.instruccionFormm {
+    color: #b7b694;
+    font-size: 1.5em;
+    margin: 1em 2em;
+}
+
+.contactoViaMail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    transition: all 0.2s linear;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 200;
+    visibility: hidden;
+    padding: auto;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    color: #ffffff;
+    overflow: auto;
+}
+
+.formularioDeContacto {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+
+/* Style inputs, select elements and textareas */
+input,
+textarea {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0 2em;
+    box-sizing: border-box;
+    resize: vertical;
+    align-self: center;
+}
+
+textarea {
+    margin: 2em;
+}
+
+/* Style the label to display next to the inputs */
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    font-size: medium;
+}
+
+/* Style the submit button */
+input[type=submit],
+input[type=reset] {
+    background-color: #8c576f;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 1em;
+    cursor: pointer;
+    float: right;
+    margin-bottom: 5px;
+    width: 50%;
+}
+
+input[type=reset] {
+    background-color: #af9970;
+}
+
+.correoElectronico {
+    text-decoration: underline blueviolet;
+}
+
+.closeButton {
+    z-index: 200;
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    background: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    top: 1px;
+    right: -1px;
+}
+
+.closeButton span {
+    width: 37px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    border-radius: 3px;
+    transform-origin: 4px 0px;
+    transition: all 0.2s linear;
+    opacity: 1;
+    transform: rotate(45deg) translate(0px, 0px);
+    background: #af9970;
+}
+
+.closeButton span:nth-child(2) {
+    transform: rotate(315deg) translate(-8px, 5px);
+}
+
+.posicion,
+.grado {
+    color: #272727;
+    font-weight: bolder;
+    text-transform: uppercase;
+
+}
+
+.puesto {
+    margin-bottom: 1.5em;
+}
+
+.divisorSeccion,
+.divisorSeccion-skills {
+    border: none;
+    width: 100%;
+    height: 35px;
+    border-bottom: 1px solid #272727;
+    box-shadow: 0 24px 20px -16px #333;
+    margin-top: -1em;
+}
+
+.contactMe {
+    color: #8c576f;
+    text-align: center;
+    font-size: 3em;
+    font-weight: 900;
+    margin-top: 2em;
+}
+
+.nivel-lectura-1 {
+    font-weight: bold;
+    color: #9e259e;
+}
+
+.nivel-lectura-2 {
+    font-weight: bold;
+    color: purple;
+}
+
+.cv-footer div {
+    display: flex;
+    flex-direction: row;
+    font-size: 1em;
+    display: flex;
+    flex-direction: row;
+}
+
+.creadoPor {
+    width: auto;
+}
+
+@media screen and (min-width: 760px) {
+    .resume {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #272727;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        width: 80%;
+        position: relative;
+        background-color: #E8E8E8;
+        max-width: 1000px;
+        min-height: 100px;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        grid-template-rows: repeat(5, 1fr);
+        box-shadow: 0 35px 55px black;
+        z-index: -1;
+        margin: 6em 0;
+        z-index: 100;
+    }
+
+    .cv-header {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        text-align: center;
+        grid-area: 1/1/2/3;
+        text-transform: uppercase;
+    }
+
+    .cv-foto {
+        width: 23.5em;
+        height: 23.5em;
+        border-radius: 50%;
+        margin: 0.5em 0 0.5em 1em;
+        border-color: #272727;
+        border-style: solid;
+        z-index: 9999;
+    }
+
+    .cv-foto-border {
+        position: relative;
+        width: 25em;
+        height: 25em;
+        background-color: #272727;
+        border-radius: 50%;
+        z-index: 9998;
+    }
+
+    .cv-datosPrincipales {
+        position: relative;
+        display: flex;
+        justify-items: center;
+        align-content: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .cv-datosPrincipales-nombre {
+        font-family: 'Sofia Sans', sans-serif;
+        font-weight: 800;
+        font-size: 64px;
+        color: rgb(126, 18, 154);
+
+    }
+
+    .cv-datosPrincipales-nombre a:active,
+    a:visited,
+    a:link {
+        color: rgb(126, 18, 154);
+        text-decoration: none;
+    }
+
+
+    .datosCV-left,
+    .datosCV-right {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+
+    }
+
+    .datosCV-left {
+        grid-area: 2/1/6/2;
+    }
+
+    .datosCV-left-contacto div ul .correoElectronico {
+        text-decoration: underline blueviolet;
+    }
+
+    .datosCV-right {
+        grid-area: 2/2/6/3;
+    }
+
+    .subtitulo {
+        color: rgb(126, 18, 154);
+        font-size: 24px;
+        font-weight: bolder;
+    }
+
+    .detalle {
+        color: #272727;
+        font-size: 14px;
+        line-height: 1.4em;
+        text-align: left;
+    }
+
+
+    .main-logo {
+        flex-basis: 30%;
+    }
+
+    .main-nav {
+        position: static;
+        margin-left: 0;
+        flex-basis: 70%;
+        height: 100%;
+    }
+
+    .nav-links {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        background: white;
+    }
+
+    .link-item {
+        display: inline-block;
+        margin-top: 0;
+        margin-right: 2em;
+    }
+
+
+    .divisorSeccion-skills {
+        display: none;
+    }
+
+    .container {
+        margin: 6em;
+
+    }
+
+
+    .cloud-bottomRight,
+    .dot-little,
+    .dot-medium,
+    .dot-large {
+        visibility: visible;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    .cloud-topLeft {
+        background-size: 85%;
+        top: -23em;
+        left: -18em;
+        width: 81em;
+        height: 53em;
+        z-index: 0;
+    }
+
+    .cv-header {
+        background: none;
+    }
+}
